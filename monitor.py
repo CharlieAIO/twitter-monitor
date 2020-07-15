@@ -185,6 +185,7 @@ class Monitor:
     def __init__(self):
         self.sentTweets = []
         self.APIlist = []
+        self.dataCount = 1 #number of twitter developer accounts in data.json
         print(f"{get_t_name()} Twitter Monitor v2 | by CharlieAIO")
         self.MonitorList = ["soleaio"]
 
@@ -195,7 +196,7 @@ class Monitor:
             
         with open('data.json','r') as dataRead:
             data = json.loads(dataRead.read())
-            for i in range(2):
+            for i in range(int(self.dataCount)):
                 i + 1
                 name = f'account{i}'
                 print(f"{get_t_name()} Loading API | {name} |")
